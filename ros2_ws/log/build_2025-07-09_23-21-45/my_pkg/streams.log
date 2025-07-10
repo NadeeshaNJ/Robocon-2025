@@ -1,0 +1,37 @@
+[2.714s] Invoking command in '/home/pi/ros2_ws/src/my_pkg': PYTHONPATH=/home/pi/ros2_ws/build/my_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pi/ros2_ws/install/my_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/my_pkg build --build-base /home/pi/ros2_ws/build/my_pkg/build install --record /home/pi/ros2_ws/build/my_pkg/install.log --single-version-externally-managed install_data
+[3.799s] running egg_info
+[3.801s] creating ../../build/my_pkg/my_pkg.egg-info
+[3.802s] writing ../../build/my_pkg/my_pkg.egg-info/PKG-INFO
+[3.803s] writing dependency_links to ../../build/my_pkg/my_pkg.egg-info/dependency_links.txt
+[3.804s] writing entry points to ../../build/my_pkg/my_pkg.egg-info/entry_points.txt
+[3.805s] writing requirements to ../../build/my_pkg/my_pkg.egg-info/requires.txt
+[3.805s] writing top-level names to ../../build/my_pkg/my_pkg.egg-info/top_level.txt
+[3.806s] writing manifest file '../../build/my_pkg/my_pkg.egg-info/SOURCES.txt'
+[3.815s] reading manifest file '../../build/my_pkg/my_pkg.egg-info/SOURCES.txt'
+[3.818s] writing manifest file '../../build/my_pkg/my_pkg.egg-info/SOURCES.txt'
+[3.819s] running build
+[3.819s] running build_py
+[3.820s] creating /home/pi/ros2_ws/build/my_pkg/build
+[3.820s] creating /home/pi/ros2_ws/build/my_pkg/build/lib
+[3.821s] creating /home/pi/ros2_ws/build/my_pkg/build/lib/my_pkg
+[3.821s] copying my_pkg/my_node.py -> /home/pi/ros2_ws/build/my_pkg/build/lib/my_pkg
+[3.822s] copying my_pkg/__init__.py -> /home/pi/ros2_ws/build/my_pkg/build/lib/my_pkg
+[3.824s] running install
+[3.825s] running install_lib
+[3.828s] creating /home/pi/ros2_ws/install/my_pkg/lib/python3.10/site-packages/my_pkg
+[3.828s] copying /home/pi/ros2_ws/build/my_pkg/build/lib/my_pkg/my_node.py -> /home/pi/ros2_ws/install/my_pkg/lib/python3.10/site-packages/my_pkg
+[3.829s] copying /home/pi/ros2_ws/build/my_pkg/build/lib/my_pkg/__init__.py -> /home/pi/ros2_ws/install/my_pkg/lib/python3.10/site-packages/my_pkg
+[3.832s] byte-compiling /home/pi/ros2_ws/install/my_pkg/lib/python3.10/site-packages/my_pkg/my_node.py to my_node.cpython-310.pyc
+[3.833s] byte-compiling /home/pi/ros2_ws/install/my_pkg/lib/python3.10/site-packages/my_pkg/__init__.py to __init__.cpython-310.pyc
+[3.834s] running install_data
+[3.835s] creating /home/pi/ros2_ws/install/my_pkg/share/ament_index
+[3.836s] creating /home/pi/ros2_ws/install/my_pkg/share/ament_index/resource_index
+[3.836s] creating /home/pi/ros2_ws/install/my_pkg/share/ament_index/resource_index/packages
+[3.836s] copying resource/my_pkg -> /home/pi/ros2_ws/install/my_pkg/share/ament_index/resource_index/packages
+[3.837s] copying package.xml -> /home/pi/ros2_ws/install/my_pkg/share/my_pkg
+[3.837s] running install_egg_info
+[3.844s] Copying ../../build/my_pkg/my_pkg.egg-info to /home/pi/ros2_ws/install/my_pkg/lib/python3.10/site-packages/my_pkg-0.0.0-py3.10.egg-info
+[3.849s] running install_scripts
+[3.933s] Installing my_node script to /home/pi/ros2_ws/install/my_pkg/lib/my_pkg
+[3.935s] writing list of installed files to '/home/pi/ros2_ws/build/my_pkg/install.log'
+[4.068s] Invoked command in '/home/pi/ros2_ws/src/my_pkg' returned '0': PYTHONPATH=/home/pi/ros2_ws/build/my_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pi/ros2_ws/install/my_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/my_pkg build --build-base /home/pi/ros2_ws/build/my_pkg/build install --record /home/pi/ros2_ws/build/my_pkg/install.log --single-version-externally-managed install_data

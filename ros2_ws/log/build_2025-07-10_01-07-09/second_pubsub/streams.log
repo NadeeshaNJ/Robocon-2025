@@ -1,0 +1,42 @@
+[2.823s] Invoking command in '/home/pi/ros2_ws/src/second_pubsub': PYTHONPATH=/home/pi/ros2_ws/build/second_pubsub/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/second_pubsub build --build-base /home/pi/ros2_ws/build/second_pubsub/build install --record /home/pi/ros2_ws/build/second_pubsub/install.log --single-version-externally-managed install_data
+[3.949s] running egg_info
+[3.951s] creating ../../build/second_pubsub/second_pubsub.egg-info
+[3.952s] writing ../../build/second_pubsub/second_pubsub.egg-info/PKG-INFO
+[3.954s] writing dependency_links to ../../build/second_pubsub/second_pubsub.egg-info/dependency_links.txt
+[3.955s] writing entry points to ../../build/second_pubsub/second_pubsub.egg-info/entry_points.txt
+[3.955s] writing requirements to ../../build/second_pubsub/second_pubsub.egg-info/requires.txt
+[3.956s] writing top-level names to ../../build/second_pubsub/second_pubsub.egg-info/top_level.txt
+[3.957s] writing manifest file '../../build/second_pubsub/second_pubsub.egg-info/SOURCES.txt'
+[3.964s] reading manifest file '../../build/second_pubsub/second_pubsub.egg-info/SOURCES.txt'
+[3.968s] writing manifest file '../../build/second_pubsub/second_pubsub.egg-info/SOURCES.txt'
+[3.969s] running build
+[3.970s] running build_py
+[3.971s] creating /home/pi/ros2_ws/build/second_pubsub/build
+[3.972s] creating /home/pi/ros2_ws/build/second_pubsub/build/lib
+[3.972s] creating /home/pi/ros2_ws/build/second_pubsub/build/lib/second_pubsub
+[3.977s] copying second_pubsub/listner.py -> /home/pi/ros2_ws/build/second_pubsub/build/lib/second_pubsub
+[3.978s] copying second_pubsub/__init__.py -> /home/pi/ros2_ws/build/second_pubsub/build/lib/second_pubsub
+[3.978s] copying second_pubsub/talker.py -> /home/pi/ros2_ws/build/second_pubsub/build/lib/second_pubsub
+[3.978s] running install
+[3.979s] running install_lib
+[3.981s] creating /home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages/second_pubsub
+[3.981s] copying /home/pi/ros2_ws/build/second_pubsub/build/lib/second_pubsub/listner.py -> /home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages/second_pubsub
+[3.982s] copying /home/pi/ros2_ws/build/second_pubsub/build/lib/second_pubsub/__init__.py -> /home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages/second_pubsub
+[3.983s] copying /home/pi/ros2_ws/build/second_pubsub/build/lib/second_pubsub/talker.py -> /home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages/second_pubsub
+[3.987s] byte-compiling /home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages/second_pubsub/listner.py to listner.cpython-310.pyc
+[3.989s] byte-compiling /home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages/second_pubsub/__init__.py to __init__.cpython-310.pyc
+[3.990s] byte-compiling /home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages/second_pubsub/talker.py to talker.cpython-310.pyc
+[3.991s] Sorry: TabError: inconsistent use of tabs and spaces in indentation (talker.py, line 23)
+[3.992s] running install_data
+[3.992s] creating /home/pi/ros2_ws/install/second_pubsub/share/ament_index
+[3.993s] creating /home/pi/ros2_ws/install/second_pubsub/share/ament_index/resource_index
+[3.993s] creating /home/pi/ros2_ws/install/second_pubsub/share/ament_index/resource_index/packages
+[3.994s] copying resource/second_pubsub -> /home/pi/ros2_ws/install/second_pubsub/share/ament_index/resource_index/packages
+[3.994s] copying package.xml -> /home/pi/ros2_ws/install/second_pubsub/share/second_pubsub
+[3.994s] running install_egg_info
+[4.002s] Copying ../../build/second_pubsub/second_pubsub.egg-info to /home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages/second_pubsub-0.0.0-py3.10.egg-info
+[4.007s] running install_scripts
+[4.094s] Installing listner script to /home/pi/ros2_ws/install/second_pubsub/lib/second_pubsub
+[4.094s] Installing talker script to /home/pi/ros2_ws/install/second_pubsub/lib/second_pubsub
+[4.096s] writing list of installed files to '/home/pi/ros2_ws/build/second_pubsub/install.log'
+[4.226s] Invoked command in '/home/pi/ros2_ws/src/second_pubsub' returned '0': PYTHONPATH=/home/pi/ros2_ws/build/second_pubsub/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/second_pubsub build --build-base /home/pi/ros2_ws/build/second_pubsub/build install --record /home/pi/ros2_ws/build/second_pubsub/install.log --single-version-externally-managed install_data

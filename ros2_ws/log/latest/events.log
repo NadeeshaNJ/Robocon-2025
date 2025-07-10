@@ -1,0 +1,75 @@
+[0.000000] (-) TimerEvent: {}
+[0.001810] (-) JobUnselected: {'identifier': 'my_pkg'}
+[0.002396] (-) JobUnselected: {'identifier': 'py_pubsub'}
+[0.002486] (-) JobUnselected: {'identifier': 'robocon'}
+[0.002570] (second_pubsub) JobQueued: {'identifier': 'second_pubsub', 'dependencies': OrderedDict()}
+[0.002656] (second_pubsub) JobStarted: {'identifier': 'second_pubsub'}
+[0.099023] (-) TimerEvent: {}
+[0.199902] (-) TimerEvent: {}
+[0.300670] (-) TimerEvent: {}
+[0.401336] (-) TimerEvent: {}
+[0.501984] (-) TimerEvent: {}
+[0.602628] (-) TimerEvent: {}
+[0.703267] (-) TimerEvent: {}
+[0.804128] (-) TimerEvent: {}
+[0.904805] (-) TimerEvent: {}
+[1.005455] (-) TimerEvent: {}
+[1.106077] (-) TimerEvent: {}
+[1.206815] (-) TimerEvent: {}
+[1.309344] (-) TimerEvent: {}
+[1.410986] (-) TimerEvent: {}
+[1.511661] (-) TimerEvent: {}
+[1.612386] (-) TimerEvent: {}
+[1.713062] (-) TimerEvent: {}
+[1.813771] (-) TimerEvent: {}
+[1.914447] (-) TimerEvent: {}
+[2.015254] (-) TimerEvent: {}
+[2.115873] (-) TimerEvent: {}
+[2.216528] (-) TimerEvent: {}
+[2.317183] (-) TimerEvent: {}
+[2.417860] (-) TimerEvent: {}
+[2.518535] (-) TimerEvent: {}
+[2.619259] (-) TimerEvent: {}
+[2.720358] (-) TimerEvent: {}
+[2.821388] (-) TimerEvent: {}
+[2.850459] (second_pubsub) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/second_pubsub', 'build', '--build-base', '/home/pi/ros2_ws/build/second_pubsub/build', 'install', '--record', '/home/pi/ros2_ws/build/second_pubsub/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/pi/ros2_ws/src/second_pubsub', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'pi', 'LC_TIME': 'si_LK', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/pi', 'OLDPWD': '/home/pi/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'si_LK', 'SYSTEMD_EXEC_PID': '1681', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/pi/ros2_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'pi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'pi', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/pi-desktop:@/tmp/.ICE-unix/1656,unix/pi-desktop:/tmp/.ICE-unix/1656', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'si_LK', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/1b519596_3c1b_426e_a211_3785ffe93b27', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'si_LK', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.U4U382', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.100', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/pi/ros2_ws/install/second_pubsub:/home/pi/ros2_ws/install/py_pubsub:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'si_LK', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'si_LK', 'LC_IDENTIFICATION': 'si_LK', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/pi/ros2_ws/build/second_pubsub', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/pi/ros2_ws/build/second_pubsub/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages:/home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages:/home/pi/ros2_ws/install/py_pubsub/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'si_LK', 'LC_PAPER': 'si_LK', 'COLCON': '1', 'VTE_VERSION': '6800'}, 'shell': False}
+[2.921712] (-) TimerEvent: {}
+[3.022610] (-) TimerEvent: {}
+[3.123309] (-) TimerEvent: {}
+[3.224308] (-) TimerEvent: {}
+[3.324962] (-) TimerEvent: {}
+[3.425596] (-) TimerEvent: {}
+[3.526260] (-) TimerEvent: {}
+[3.626865] (-) TimerEvent: {}
+[3.727533] (-) TimerEvent: {}
+[3.828387] (-) TimerEvent: {}
+[3.929028] (-) TimerEvent: {}
+[3.980352] (second_pubsub) StdoutLine: {'line': b'running egg_info\n'}
+[3.983178] (second_pubsub) StdoutLine: {'line': b'writing ../../build/second_pubsub/second_pubsub.egg-info/PKG-INFO\n'}
+[3.984245] (second_pubsub) StdoutLine: {'line': b'writing dependency_links to ../../build/second_pubsub/second_pubsub.egg-info/dependency_links.txt\n'}
+[3.985350] (second_pubsub) StdoutLine: {'line': b'writing entry points to ../../build/second_pubsub/second_pubsub.egg-info/entry_points.txt\n'}
+[3.986385] (second_pubsub) StdoutLine: {'line': b'writing requirements to ../../build/second_pubsub/second_pubsub.egg-info/requires.txt\n'}
+[3.987096] (second_pubsub) StdoutLine: {'line': b'writing top-level names to ../../build/second_pubsub/second_pubsub.egg-info/top_level.txt\n'}
+[3.995296] (second_pubsub) StdoutLine: {'line': b"reading manifest file '../../build/second_pubsub/second_pubsub.egg-info/SOURCES.txt'\n"}
+[3.998993] (second_pubsub) StdoutLine: {'line': b"writing manifest file '../../build/second_pubsub/second_pubsub.egg-info/SOURCES.txt'\n"}
+[3.999740] (second_pubsub) StdoutLine: {'line': b'running build\n'}
+[4.000206] (second_pubsub) StdoutLine: {'line': b'running build_py\n'}
+[4.001083] (second_pubsub) StdoutLine: {'line': b'copying second_pubsub/listner1.py -> /home/pi/ros2_ws/build/second_pubsub/build/lib/second_pubsub\n'}
+[4.002980] (second_pubsub) StdoutLine: {'line': b'running install\n'}
+[4.004437] (second_pubsub) StdoutLine: {'line': b'running install_lib\n'}
+[4.008428] (second_pubsub) StdoutLine: {'line': b'copying /home/pi/ros2_ws/build/second_pubsub/build/lib/second_pubsub/listner1.py -> /home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages/second_pubsub\n'}
+[4.011921] (second_pubsub) StdoutLine: {'line': b'byte-compiling /home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages/second_pubsub/listner1.py to listner1.cpython-310.pyc\n'}
+[4.016226] (second_pubsub) StdoutLine: {'line': b'running install_data\n'}
+[4.016874] (second_pubsub) StdoutLine: {'line': b'running install_egg_info\n'}
+[4.024402] (second_pubsub) StdoutLine: {'line': b"removing '/home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages/second_pubsub-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[4.026018] (second_pubsub) StdoutLine: {'line': b'Copying ../../build/second_pubsub/second_pubsub.egg-info to /home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages/second_pubsub-0.0.0-py3.10.egg-info\n'}
+[4.029153] (-) TimerEvent: {}
+[4.031526] (second_pubsub) StdoutLine: {'line': b'running install_scripts\n'}
+[4.118893] (second_pubsub) StdoutLine: {'line': b'Installing listner script to /home/pi/ros2_ws/install/second_pubsub/lib/second_pubsub\n'}
+[4.119773] (second_pubsub) StdoutLine: {'line': b'Installing talker script to /home/pi/ros2_ws/install/second_pubsub/lib/second_pubsub\n'}
+[4.121852] (second_pubsub) StdoutLine: {'line': b"writing list of installed files to '/home/pi/ros2_ws/build/second_pubsub/install.log'\n"}
+[4.129461] (-) TimerEvent: {}
+[4.230623] (-) TimerEvent: {}
+[4.254004] (second_pubsub) CommandEnded: {'returncode': 0}
+[4.306711] (second_pubsub) JobEnded: {'identifier': 'second_pubsub', 'rc': 0}
+[4.309430] (-) EventReactorShutdown: {}

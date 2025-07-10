@@ -1,0 +1,39 @@
+running egg_info
+creating ../../build/second_pubsub/second_pubsub.egg-info
+writing ../../build/second_pubsub/second_pubsub.egg-info/PKG-INFO
+writing dependency_links to ../../build/second_pubsub/second_pubsub.egg-info/dependency_links.txt
+writing entry points to ../../build/second_pubsub/second_pubsub.egg-info/entry_points.txt
+writing requirements to ../../build/second_pubsub/second_pubsub.egg-info/requires.txt
+writing top-level names to ../../build/second_pubsub/second_pubsub.egg-info/top_level.txt
+writing manifest file '../../build/second_pubsub/second_pubsub.egg-info/SOURCES.txt'
+reading manifest file '../../build/second_pubsub/second_pubsub.egg-info/SOURCES.txt'
+writing manifest file '../../build/second_pubsub/second_pubsub.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/pi/ros2_ws/build/second_pubsub/build
+creating /home/pi/ros2_ws/build/second_pubsub/build/lib
+creating /home/pi/ros2_ws/build/second_pubsub/build/lib/second_pubsub
+copying second_pubsub/listner.py -> /home/pi/ros2_ws/build/second_pubsub/build/lib/second_pubsub
+copying second_pubsub/__init__.py -> /home/pi/ros2_ws/build/second_pubsub/build/lib/second_pubsub
+copying second_pubsub/talker.py -> /home/pi/ros2_ws/build/second_pubsub/build/lib/second_pubsub
+running install
+running install_lib
+creating /home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages/second_pubsub
+copying /home/pi/ros2_ws/build/second_pubsub/build/lib/second_pubsub/listner.py -> /home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages/second_pubsub
+copying /home/pi/ros2_ws/build/second_pubsub/build/lib/second_pubsub/__init__.py -> /home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages/second_pubsub
+copying /home/pi/ros2_ws/build/second_pubsub/build/lib/second_pubsub/talker.py -> /home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages/second_pubsub
+byte-compiling /home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages/second_pubsub/listner.py to listner.cpython-310.pyc
+byte-compiling /home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages/second_pubsub/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages/second_pubsub/talker.py to talker.cpython-310.pyc
+running install_data
+creating /home/pi/ros2_ws/install/second_pubsub/share/ament_index
+creating /home/pi/ros2_ws/install/second_pubsub/share/ament_index/resource_index
+creating /home/pi/ros2_ws/install/second_pubsub/share/ament_index/resource_index/packages
+copying resource/second_pubsub -> /home/pi/ros2_ws/install/second_pubsub/share/ament_index/resource_index/packages
+copying package.xml -> /home/pi/ros2_ws/install/second_pubsub/share/second_pubsub
+running install_egg_info
+Copying ../../build/second_pubsub/second_pubsub.egg-info to /home/pi/ros2_ws/install/second_pubsub/lib/python3.10/site-packages/second_pubsub-0.0.0-py3.10.egg-info
+running install_scripts
+Installing listner script to /home/pi/ros2_ws/install/second_pubsub/lib/second_pubsub
+Installing talker script to /home/pi/ros2_ws/install/second_pubsub/lib/second_pubsub
+writing list of installed files to '/home/pi/ros2_ws/build/second_pubsub/install.log'
