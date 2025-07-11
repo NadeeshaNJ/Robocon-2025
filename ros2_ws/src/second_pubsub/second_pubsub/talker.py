@@ -41,9 +41,9 @@ class Controller(Node):
                 elif key == 's':  # Backward
                     msg.data = '-255 -255 -255 -255'  # All motors backward
                 elif key == 'a':  # Left
-                    msg.data = '-255 255 -255 255'  # Left motors backward, right motors forward
+                    msg.data = '255 -255 -255 255'  # Left motors backward, right motors forward
                 elif key == 'd':  # Right
-                    msg.data = '255 -255 255 -255'  # Left motors forward, right motors backward
+                    msg.data = '-255 255 255 -255'  # Left motors forward, right motors backward
                 
                 self.moving_publisher.publish(msg)
                 self.get_logger().info(f'Published to robot/moving: "{msg.data}"')
