@@ -111,20 +111,20 @@ void setup()
                 }
 
                 // Shooter control using servo
-                // if (server.hasArg("ShooterPush")) {
-                //     bool state = (server.arg("ShooterPush") == "ON");
-                //     if (state) {
-                //         // Activate shooter servo (move to shooting position)
-                //         shooterServo.write(180);
-                //         servoPosition = 180;
-                //         Serial.println("ShooterPush: ON - Servo at 180°");
-                //     } else {
-                //         // Return shooter servo to home position
-                //         shooterServo.write(0);
-                //         servoPosition = 0;
-                //         Serial.println("ShooterPush: OFF - Servo at 0°");
-                //     }
-                // }
+                if (server.hasArg("ShooterPush")) {
+                    bool state = (server.arg("ShooterPush") == "ON");
+                    if (state) {
+                        // Activate shooter servo (move to shooting position)
+                        shooterServo.write(180);
+                        servoPosition = 180;
+                        Serial.println("ShooterPush: ON - Servo at 180°");
+                    } else {
+                        // Return shooter servo to home position
+                        shooterServo.write(0);
+                        servoPosition = 0;
+                        Serial.println("ShooterPush: OFF - Servo at 0°");
+                    }
+                }
                 
                 // Additional servo control options
                 // if (server.hasArg("ServoPosition")) {
