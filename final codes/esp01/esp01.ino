@@ -1,125 +1,98 @@
+#include <Arduino.h>
 
-#include <WiFi.h>
-#include <WebServer.h>
+// Define the LED pin for ESP-01 (connected to GPIO2)
+#define LED_PIN 2
 
-// Motor control pins
-#define R_PWM_SUB 12  // Right motor PWM (front)
-#define L_PWM_SUB 14  // Left motor PWM (front)
-#define R_PWM_MAIN 27 // Right motor PWM (back)
-#define L_PWM_MAIN 26 // Left motor PWM (back)
-#define VCC 13        // Additional pin for 5V output
+// Motor control pins (example - adjust to your setup)
+#define MOTOR1_PIN1 12
+#define MOTOR1_PIN2 14
+#define MOTOR2_PIN1 27
+#define MOTOR2_PIN2 26
+#define MOTOR3_PIN1 25
+#define MOTOR3_PIN2 33
+#define MOTOR4_PIN1 32
+#define MOTOR4_PIN2 35
 
-const char *ssid = "Galaxy M01d7c3";
-const char *password = "HackMeIfYouCan";
-
-int baseSpeed = 255;
-WebServer server(80);
-
-void forward()
-{
-  analogWrite(R_PWM_SUB, baseSpeed);
-  analogWrite(L_PWM_SUB, 0);
-  analogWrite(R_PWM_MAIN, baseSpeed);
-  analogWrite(L_PWM_MAIN, 0);
-}
-
-void backward()
-{
-  analogWrite(R_PWM_SUB, 0);
-  analogWrite(L_PWM_SUB, baseSpeed);
-  analogWrite(R_PWM_MAIN, 0);
-  analogWrite(L_PWM_MAIN, baseSpeed);
-}
-
-void left()
-{
-  analogWrite(R_PWM_SUB, 0);
-  analogWrite(L_PWM_SUB, baseSpeed);
-  analogWrite(R_PWM_MAIN, baseSpeed);
-  analogWrite(L_PWM_MAIN, 0);
-}
-
-void right()
-{
-  analogWrite(R_PWM_SUB, baseSpeed);
-  analogWrite(L_PWM_SUB, 0);
-  analogWrite(R_PWM_MAIN, 0);
-  analogWrite(L_PWM_MAIN, baseSpeed);
-}
-
-void stop()
-{
-  analogWrite(R_PWM_SUB, 0);
-  analogWrite(L_PWM_SUB, 0);
-  analogWrite(R_PWM_MAIN, 0);
-  analogWrite(L_PWM_MAIN, 0);
-}
-
-void setup()
-{
+void setup() {
   Serial.begin(115200);
-
-  // Set motor control pins as outputs
-  pinMode(R_PWM_SUB, OUTPUT);
-  pinMode(L_PWM_SUB, OUTPUT);
-  pinMode(R_PWM_MAIN, OUTPUT);
-  pinMode(L_PWM_MAIN, OUTPUT);
-  pinMode(VCC, OUTPUT);
-  digitalWrite(VCC, HIGH);
-
-  // Initialize motors in stopped state
-  stop();
-
-  // Connect to WiFi
-  WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED)
-  {
-    delay(1000);
-    Serial.println("Connecting to WiFi...");
-  }
-  Serial.println("Connected to WiFi");
-  Serial.println("IP Address: " + WiFi.localIP().toString());
-
-  // Define server routes
-  server.on("/state", HTTP_POST, []()
-            {
-        if (server.args() > 0) {
-            if (server.hasArg("Forward") && server.arg("Forward") == "ON") {
-                forward();
-                Serial.println("Forward");
-            } 
-            else if (server.hasArg("Backward") && server.arg("Backward") == "ON") {
-                backward();
-                Serial.println("Backward");
-            }
-            else if (server.hasArg("Left") && server.arg("Left") == "ON") {
-                left();
-                Serial.println("Left");
-            }
-            else if (server.hasArg("Right") && server.arg("Right") == "ON") {
-                right();
-                Serial.println("Right");
-            }
-            else {
-                stop();
-                Serial.println("Stop");
-            }
-            
-            server.send(200, "text/plain", "Movement states received");
-        } else {
-            Serial.println("No states received in POST request");
-            server.send(400, "text/plain", "No states provided");
-        } });
-
-  // GET endpoint for connection check
-  server.on("/state", HTTP_GET, []()
-            { server.send(200, "text/plain", "Movement ESP32 is online"); });
-
-  server.begin();
-  Serial.println("HTTP server started");
+  
+  // Initialize motor control pins
+  pinMode(MOTOR1_PIN1, OUTPUT);
+  pinMode(MOTOR1_PIN2, OUTPUT);
+  pinMode(MOTOR2_PIN1, OUTPUT);
+  pinMode(MOTOR2_PIN2, OUTPUT);
+  pinMode(MOTOR3_PIN1, OUTPUT);
+  pinMode(MOTOR3_PIN2, OUTPUT);
+  pinMode(MOTOR4_PIN1, OUTPUT);
+  pinMode(MOTOR4_PIN2, OUTPUT);
+  
+  // Initialize LED pin (GPIO2 on ESP-01)
+  pinMode(LED_PIN, OUTPUT);
+  digitalWrite(LED_PIN, LOW);
+  
+  Serial.println("ESP-01 Ready");
 }
 
-void loop()
-{
-  server.handleClient();
+void controlMotors(int m1, int m2, int m3, int m4) {
+  // Control 4 motors based on speed values (-255 to 255)
+  // This is a simplified example - adjust for your motor driver
+  
+  // Motor 1
+  digitalWrite(MOTOR1_PIN1, m1 > 0 ? HIGH : LOW);
+  digitalWrite(MOTOR1_PIN2, m1 < 0 ? HIGH : LOW);
+  
+  // Motor 2
+  digitalWrite(MOTOR2_PIN1, m2 > 0 ? HIGH : LOW);
+  digitalWrite(MOTOR2_PIN2, m2 < 0 ? HIGH : LOW);
+  
+  // Motor 3
+  digitalWrite(MOTOR3_PIN1, m3 > 0 ? HIGH : LOW);
+  digitalWrite(MOTOR3_PIN2, m3 < 0 ? HIGH : LOW);
+  
+  // Motor 4
+  digitalWrite(MOTOR4_PIN1, m4 > 0 ? HIGH : LOW);
+  digitalWrite(MOTOR4_PIN2, m4 < 0 ? HIGH : LOW);
+  
+  // Toggle LED to show command received
+  digitalWrite(LED_PIN, HIGH);
+  delay(100);
+  digitalWrite(LED_PIN, LOW);
+}
+
+void processCommand(String cmd) {
+  if (cmd.startsWith("MOVE:")) {
+    // Parse motor values (e.g., "MOVE:255 255 255 255")
+    String values = cmd.substring(5);
+    int space1 = values.indexOf(' ');
+    int space2 = values.indexOf(' ', space1 + 1);
+    int space3 = values.indexOf(' ', space2 + 1);
+    
+    int m1 = values.substring(0, space1).toInt();
+    int m2 = values.substring(space1 + 1, space2).toInt();
+    int m3 = values.substring(space2 + 1, space3).toInt();
+    int m4 = values.substring(space3 + 1).toInt();
+    
+    controlMotors(m1, m2, m3, m4);
+    Serial.print("Moving: ");
+    Serial.println(values);
+  }
+  else if (cmd.startsWith("LIFT:")) {
+    String direction = cmd.substring(5);
+    if (direction == "UP") {
+      // Implement lift up
+      Serial.println("Lifting up");
+    }
+    else if (direction == "DOWN") {
+      // Implement lift down
+      Serial.println("Lifting down");
+    }
+  }
+}
+
+void loop() {
+  if (Serial.available()) {
+    String command = Serial.readStringUntil('\n');
+    command.trim();
+    processCommand(command);
+  }
 }
