@@ -10,16 +10,12 @@ WebServer server(80);
 // Pin Definitions
 #define IN1_LIFT 16    // Lift motor direction pin 1
 #define IN2_LIFT 17    // Lift motor direction pin 2
-static const int servoPin = 13;  // Feeder servo pin
-static const int servoPin2 = 12;
+static const int servoPin = 12;  // Feeder servo pin
 
 // Control variables
 Servo feederServo;
-Servo rotateServo;
 bool feederOn = false;
 unsigned long lastTimeStamp = 0;
-int counter = 0;
-int degree = 0;
 
 void handleShooterFeederData() {
   if (server.method() != HTTP_POST) {
@@ -69,33 +65,6 @@ void handleShooterFeederData() {
     }
     feederOn = !feederOn;
   }
-  // Process feeder commands
-  if (doc.containsKey("rotate_left") && doc["rotate_left"] == 1) {
-    counter+=2;
-    // if(counter%5){
-    //   degree++;
-    //   rotateServo.write(degree);
-    //   Serial.println(degree);
-    //   delay(20);
-    // }
-    rotateServo.write(counter);
-    Serial.println(counter);
-    delay(20);
-    
-    
-  }
-  if (doc.containsKey("rotate_right") && doc["rotate_right"] == 1) {
-    counter-=2;
-    // if(counter%10){
-    //   degree--;
-    //   rotateServo.write(degree);
-    //   Serial.println(degree);
-    //   delay(20);
-    // }
-    rotateServo.write(counter);
-    Serial.println(counter);
-    delay(20);
-  }
 
   server.send(200, "application/json", "{\"status\":\"ok\"}");
 }
@@ -112,18 +81,18 @@ void setup() {
   feederServo.write(135); // Initial position
   delay(2000);
 
-  rotateServo.attach(servoPin2);
-  rotateServo.write(0); // Initial position
-  delay(2000);
-
   // Start serial communication
   Serial.begin(115200);
 
-  // Create access point
-  WiFi.softAP(ssid, password, 1); 
-  Serial.println("Access Point started");
+  // Connect to WiFi
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Connecting to WiFi...");
+  }
+  Serial.println("Connected to WiFi");
   Serial.print("IP Address: ");
-  Serial.println(WiFi.softAPIP());
+  Serial.println(WiFi.localIP());
 
   // Setup server routes
   server.on("/shooter_feeder", HTTP_POST, handleShooterFeederData);

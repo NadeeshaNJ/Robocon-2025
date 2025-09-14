@@ -10,8 +10,8 @@ WebServer server(80);
 // Pin Definitions
 #define IN1_LIFT 16    // Lift motor direction pin 1
 #define IN2_LIFT 17    // Lift motor direction pin 2
-static const int servoPin = 13;  // Feeder servo pin
-static const int servoPin2 = 12;
+static const int servoPin = 12;  // Feeder servo pin
+static const int servoPin2 = 13;
 
 // Control variables
 Servo feederServo;
@@ -54,7 +54,7 @@ void handleShooterFeederData() {
 
   // Process feeder commands
   if (doc.containsKey("circle") && doc["circle"] == 1 && feederOn) {
-    for(int posDegrees = 135; posDegrees <= 180; posDegrees++) {
+    for(int posDegrees = 100; posDegrees <= 240; posDegrees++) {
       feederServo.write(posDegrees);
       Serial.println(posDegrees);
       delay(20);
@@ -62,7 +62,7 @@ void handleShooterFeederData() {
     feederOn = !feederOn;
   }
   if (doc.containsKey("square") && doc["square"] == 1 && !feederOn) {
-    for(int posDegrees = 180; posDegrees >= 135; posDegrees--) {
+    for(int posDegrees = 240; posDegrees >= 100; posDegrees--) {
       feederServo.write(posDegrees);
       Serial.println(posDegrees);
       delay(20);
@@ -119,11 +119,24 @@ void setup() {
   // Start serial communication
   Serial.begin(115200);
 
-  // Create access point
-  WiFi.softAP(ssid, password, 1); 
-  Serial.println("Access Point started");
+  // Connect to WiFi
+  WiFi.begin(ssid, password);
+
+  // Set maximum Wi-Fi TX power
+  bool success = WiFi.setTxPower(WIFI_POWER_19_5dBm);
+  if (success) {
+    Serial.println("WiFi TX power set to maximum (19.5dBm).");
+  } else {
+    Serial.println("Failed to set WiFi TX power.");
+  }
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Connecting to WiFi...");
+  }
+  Serial.println("Connected to WiFi");
   Serial.print("IP Address: ");
-  Serial.println(WiFi.softAPIP());
+  Serial.println(WiFi.localIP());
 
   // Setup server routes
   server.on("/shooter_feeder", HTTP_POST, handleShooterFeederData);
