@@ -119,15 +119,11 @@ void setup() {
   // Start serial communication
   Serial.begin(115200);
 
-  // Connect to WiFi
-  WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
-    Serial.println("Connecting to WiFi...");
-  }
-  Serial.println("Connected to WiFi");
+  // Create access point
+  WiFi.softAP(ssid, password, 1); 
+  Serial.println("Access Point started");
   Serial.print("IP Address: ");
-  Serial.println(WiFi.localIP());
+  Serial.println(WiFi.softAPIP());
 
   // Setup server routes
   server.on("/shooter_feeder", HTTP_POST, handleShooterFeederData);
